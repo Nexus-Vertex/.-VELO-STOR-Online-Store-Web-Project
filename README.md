@@ -54,3 +54,9 @@ Dieses Projekt wurde eigenständig entwickelt, um grundlegende Kenntnisse in den
 Der Fokus liegt auf der Verständnis technischer Konzepte, sauberer Projektstruktur und nachvollziehbarer Implementierung – Kompetenzen, die besonders relevant für eine Ausbildung im Bereich Fachinformatik / Anwendungsentwicklung sind.
 
 Dieses Repository dient als praktischer Nachweis meiner Motivation, Lernbereitschaft und technischen Grundlagen.
+
+# This project is part of a series of practical experiments, including:
+
+- **WhatsApp AI Bot:** 👉 https://github.com/Nexus-Vertex/Meta-API-python-whatsapp-bot
+
+- **Anomaly Detection Program:** 👉 https://github.com/Nexus-Vertex/Anomaly-Detection-System
