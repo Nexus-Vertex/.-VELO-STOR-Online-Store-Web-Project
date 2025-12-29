@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>📊 واجهة التحكم - WhatsApp Bot</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e0f0ff;
+    color: #003366;
+  }
+  h1 {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #004080, #0073e6);
+    margin: 0;
+    font-size: 28px;
+    border-bottom: 2px solid #005bb5;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+  }
+  .center-box, .right-box {
+    background: #cce0ff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .center-box { flex: 2; }
+  .right-box {
+    flex: 1;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  h2 { 
+    color: #004080; 
+    margin-bottom: 15px; 
+    font-size: 22px; 
+  }
+  select, textarea, button {
+    padding: 12px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #99c2ff;
+    box-sizing: border-box;
+    background: #f0f8ff;
+    color: #003366;
+  }
+  textarea { resize: vertical; min-height: 120px; }
+  button {
+    background: #004080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  button:hover { background: #00264d; }
+  
+  /* قائمة آخر الرسائل - ستايل عصري */
+  .list {
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #99c2ff;
+    color: #003366;
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .message {
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+  }
+  .message b {
+    color: #004080;
+  }
+
+  div#sendResult { margin-top: 10px; font-weight: bold; color: #004080; min-height: 24px; }
+</style>
+</head>
+<body>
+
+<h1>📊 واجهة التحكم - WhatsApp Bot</h1>
+
+<div class="container">
+  <!-- الوسط: إرسال رسالة -->
+  <div class="center-box">
+    <h2>✉️ إرسال رسالة</h2>
+    <label for="to">اختار الرقم:</label>
+    <select id="to">
+      <option value="">-- اختر رقم --</option>
+    </select>
+    <textarea id="body" placeholder="نص الرسالة"></textarea>
+    <button onclick="sendMessage()">إرسال</button>
+    <div id="sendResult"></div>
+  </div>
+
+  <!-- اليمين: آخر 10 رسائل -->
+  <div class="right-box">
+    <h2>🕒 آخر 10 رسائل</h2>
+    <div id="lastMessages" class="list">جار التحميل...</div>
+    <button onclick="fetchMessages()">🔄 تحديث</button>
+  </div>
+</div>
+
+<script>
+  if (window.location.protocol === "file:") {
+    if (confirm("⚠️ خاصك تفتح هاد الصفحة من السيرفر: http://localhost:5000/control\n\nبغيت تمشي دابا؟")) {
+      window.location.href = "http://localhost:5000/control";
+    } else {
+      document.body.innerHTML = "<h2 style='color:red;text-align:center;margin-top:50px'>⛔ توقف! خاصك تفتح هاد الواجهة من السيرفر.</h2>";
+    }
+  }
+
+  async function fetchNumbers() {
+    try {
+      const res = await fetch('/numbers');
+      const data = await res.json();
+      const select = document.getElementById('to');
+      select.innerHTML = '<option value="">-- اختر رقم --</option>';
+      if (data.length === 0) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "ما كاينش أرقام حاليا";
+        select.appendChild(opt);
+      } else {
+        data.forEach(n => {
+          const opt = document.createElement("option");
+          opt.value = n;
+          opt.textContent = n;
+          select.appendChild(opt);
+        });
+      }
+    } catch (err) { console.error(err); }
+  }
+
+  async function fetchMessages() {
+    try {
+      const res = await fetch('/last-messages');
+      const data = await res.json();
+      const container = document.getElementById('lastMessages');
+      if(data.length === 0){
+        container.innerHTML = "<div class='message'>ما كاينش رسائل حاليا</div>";
+      } else {
+        container.innerHTML = data.map(m =>
+          `<div class='message'><b>${m.phone}</b>: ${m.body}</div>`
+        ).join('');
+      }
+    } catch(err) { console.error(err); }
+  }
+
+  async function sendMessage() {
+    const to = document.getElementById('to').value;
+    const body = document.getElementById('body').value;
+    if (!to) { alert("⛔ خاصك تختار الرقم أولا!"); return; }
+
+    const sendResult = document.getElementById('sendResult');
+    // نمسح أي حالة قديمة قبل إرسال الرسالة
+    sendResult.innerText = "";
+
+    try {
+        const res = await fetch('/send-message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ to, body })
+        });
+
+        const result = await res.json();
+
+        if (result.status === "success") {
+            sendResult.innerText = "✅ الرسالة ترسلات";
+        } else {
+            sendResult.innerText = "❌ خطأ فالإرسال";
+        }
+
+        // نمسح الرسالة الحالية بعد 3 ثواني
+        setTimeout(() => {
+            if (sendResult.innerText === "✅ الرسالة ترسلات" || sendResult.innerText === "❌ خطأ فالإرسال") {
+                sendResult.innerText = "";
+            }
+        }, 3000);
+
+    } catch(err) {
+        console.error(err);
+        sendResult.innerText = "❌ خطأ فالإرسال";
+        setTimeout(() => { sendResult.innerText = ""; }, 3000);
+    }
+  }
+
+  fetchNumbers();
+  fetchMessages();
+  // تحديث الرسائل أوتوماتيكياً كل 10 ثواني
+  setInterval(fetchMessages, 10000);
+</script>
+
+</body>
+</html>

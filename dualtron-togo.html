@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dualtron TOGO 36V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 1rem;
+      color: #333;
+    }
+    .product {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      flex-direction: row-reverse;
+    }
+    .images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .thumbs img {
+      width: 70px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .thumbs img.active {
+      border-color: #00aaff;
+    }
+    .main-image {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .details {
+      flex: 1.5;
+      direction: ltr;
+      text-align: left;
+    }
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0077aa;
+      margin-bottom: 0.5rem;
+    }
+    .desc {
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .price { font-size: 1.4rem; color: #00aaff; margin: 1rem 0; font-weight: bold; }
+    .price del { color: #999; font-size: 1rem; margin-right: 10px; }
+    .specs {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .specs p {
+      margin: 0.4rem 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .specs p::before {
+      content: "✔ ";
+      color: #00aaff;
+      font-weight: bold;
+    }
+    .buy-btn {
+      display: block;
+      background-color: #00aaff;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .buy-btn:hover { background-color: #008ecc; }
+
+    @media (max-width: 768px) {
+      .product { flex-direction: column; text-align: center; }
+      .details { direction: ltr; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="product">
+  <div class="images">
+    <div class="thumbs" id="thumbs">
+      <img src="images/produits/dualtron/1.jpg" class="active" alt="Photo 1" />
+      <img src="images/produits/dualtron/2.jpg" alt="Photo 2" />
+      <img src="images/produits/dualtron/3.jpg" alt="Photo 3" />
+      <img src="images/produits/dualtron/4.jpg" alt="Photo 4" />
+	  <img src="images/produits/dualtron/5.jpg" alt="Photo 4" />
+    </div>
+    <img id="mainImage" class="main-image" src="images/produits/dualtron/1.jpg" alt="Dualtron TOGO 36V" />
+  </div>
+
+  <div class="details">
+    <div class="title">TROTTINETTE DUALTRON TOGO 36V</div>
+    <div class="desc">
+      Profitez d'une trottinette compacte, performante et connectée. Idéale pour vos trajets urbains !
+    </div>
+    <div class="price"><del>5499 DH</del> 4149 DH</div>
+
+    <div class="specs">
+      <p>Moteur 800W max</p><p>Batterie lithium 36V 7,8AH</p><p>Autonomie : 15‑25 km</p>
+      <p>Vitesse max : 40 km/h</p><p>Frein avant/arrière + E‑ABS</p><p>Suspension avant/arrière</p>
+      <p>Charge max : 100 kg</p><p>Tableau digital</p><p>3 vitesses</p>
+      <p>LED avant/arrière</p><p>IP54 / IPX4</p><p>Clignotants L/D</p>
+      <p>Contrôle par smartphone</p><p>Roue 9″ chambre à air</p><p>Chargeur 42 V</p><p>Pliable</p>
+    </div>
+
+    <a href="https://wa.me/212.......?text=السلام%20عليكم%20%F0%9F%98%8A%20%0A%0Aبغيت%20نسول%20على%20TROTTINETTE%20DUALTRON%20TOGO%2036V%20بثمن%204149%20درهم.%20واش%20مزال%20متوفرة%3F" target="_blank" class="buy-btn">📲 اطلب الآن عبر واتساب</a>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('#thumbs img').forEach(thumb => {
+    thumb.onclick = () => {
+      document.getElementById('mainImage').src = thumb.src;
+      document.querySelectorAll('#thumbs img').forEach(i => i.classList.remove('active'));
+      thumb.classList.add('active');
+    };
+  });
+</script>
+
+</body>
+</html>

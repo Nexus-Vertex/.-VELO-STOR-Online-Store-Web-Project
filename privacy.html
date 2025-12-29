@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سياسة الخصوصية - Velo.Stor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body { background-color:#f5f5f5; color:#333; }
+    nav { background-color:#004f77; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;}
+    .site-name { color:#fff; font-size:1.8rem; font-weight:700; display:flex; align-items:center; gap:0.5rem;}
+    .vs-logo { font-weight:bold; font-size:1.4rem; color:#00aaff; background:#fff; padding:0.2rem 0.5rem; border-radius:5px;}
+    .nav-center { display:flex; gap:2rem; align-items:center; justify-content:center; flex:1;}
+    nav ul { list-style:none; display:flex; gap:2rem;}
+    nav ul li { position:relative; }
+    nav ul li a { color:white; text-decoration:none; font-weight:500; font-size:1.1rem; padding:0.5rem; display:inline-block; }
+    nav ul li:hover .dropdown { display:block; }
+    .dropdown { display:none; position:absolute; top:100%; background-color:#005f88; border-radius:5px; min-width:180px; z-index:1000;}
+    .dropdown a { color:white; padding:0.5rem 1rem; text-align:right; display:block; font-size:0.95rem;}
+    .dropdown a:hover { background-color:#0077aa; }
+
+    /* القسم التحتاني - محتوى + صورة */
+    .form-section { max-width:1200px; margin:3rem auto 4rem; padding:0 2rem; display:flex; gap:3rem; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+    .form-container { flex:1.2; min-width:320px; background:white; padding:2rem; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+    h1 { font-size:2.5rem; color:#00aaff; margin-bottom:1.5rem;}
+    p { line-height:1.6; margin-bottom:1rem; }
+    .image-container { flex:1; min-width:300px; max-width:400px; border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+    .image-container img { width:100%; display:block; border-radius:12px; object-fit:cover; height:100%; }
+
+    footer { background-color:#003c5e; color:white; padding:3rem 2rem 1rem 2rem;}
+    .footer-content { display:flex; justify-content:space-between; flex-wrap:wrap; gap:2rem; max-width:1200px; margin:auto;}
+    .footer-box { flex:1; min-width:250px;}
+    .footer-box h3 { font-size:1.5rem; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;}
+    .footer-box p, .footer-links a, .footer-contact div { font-size:0.95rem; line-height:1.6; color:white;}
+    .footer-links a { display:block; text-decoration:none; margin-bottom:0.5rem;}
+    .copyright { text-align:center; margin-top:2rem; font-size:0.9rem; color:#cccccc;}
+
+    @media (max-width:768px) {
+      .form-section { flex-direction:column;}
+      .image-container, .form-container { max-width:100%;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- بار التنقل -->
+  <nav>
+    <div class="site-name"><span class="vs-logo">VS</span> Velo.Stor</div>
+    <div class="nav-center">
+      <ul>
+	    <li>
+		<a href="admin.html">حسابي</a>
+		<div class="dropdown">
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="terms.html">الشروط والأحكام</a>
+		</div>
+		</li>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="products.html">منتوجاتنا</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- محتوى الصفحة -->
+  <section class="form-section">
+    <div class="image-container">
+      <img src="images/couverture/privacy.png" alt="سياسة الخصوصية">
+    </div>
+
+    <div class="form-container">
+      <h1>سياسة الخصوصية</h1>
+      <p>نحن نحترم خصوصيتك ونلتزم بحماية معلوماتك الشخصية. يتم جمع البيانات فقط لتحسين تجربتك في موقعنا.</p>
+      <p>نستخدم المعلومات التي نجمعها لتقديم خدمات أفضل، معالجة الطلبات، والتواصل مع العملاء عند الحاجة.</p>
+      <p>لا نقوم ببيع أو مشاركة بياناتك الشخصية مع أي طرف ثالث دون موافقتك.</p>
+      <p>يمكنك الاطلاع على حقوقك والتواصل معنا في أي وقت عبر صفحة تواصل معنا.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3><span class="vs-logo">VS</span> Velo.Stor</h3>
+        <p>متجر Velo.Stor متخصص في بيع الدراجات الحديثة. خدمة توصيل سريعة، أسعار تنافسية، وتجربة شراء ممتعة.</p>
+      </div>
+      <div class="footer-box">
+        <h3>روابط سريعة</h3>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="products.html">منتوجاتنا</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
+      </div>
+      <div class="footer-box footer-contact">
+        <h3>تواصل معنا</h3>
+        <div><i class="fas fa-phone"></i> 0716142438</div>
+        <div><i class="fab fa-whatsapp"></i> 0716142438</div>
+        <div><i class="fas fa-envelope"></i> nexusovertex@gmail.com</div>
+        <div><i class="fas fa-map-marker-alt"></i> الدار البيضاء، عين الذياب، شارع الفقهاء</div>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2025 Velo.Stor - جميع الحقوق محفوظة</div>
+  </footer>
+
+</body>
+</html>

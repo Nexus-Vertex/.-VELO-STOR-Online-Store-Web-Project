@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velo.Stor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    nav {
+      background-color: #004f77;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .site-name {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .vs-logo {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #00aaff;
+      background-color: #ffffff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #005f88;
+      border-radius: 5px;
+      min-width: 180px;
+      z-index: 1000;
+    }
+
+    .dropdown a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-align: right;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .dropdown a:hover {
+      background-color: #0077aa;
+    }
+
+    /* HEADER avec cadre stylé */
+    header {
+      position: relative; /* nécessaire pour ::before */
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/couverture/vtt.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 85vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 20px;       /* coins arrondis */
+      overflow: hidden;           /* pour que l'image respecte le border-radius */
+      box-shadow: 0 0 30px rgba(0,0,0,0.6); /* ombre autour du header */
+      border: 5px solid #00aaff; /* cadre coloré */
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 3px solid white; /* cadre intérieur */
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #00aaff;
+    }
+
+    header p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .cta-button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background-color: #008ecc;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: #004f77;
+      margin-bottom: 2rem;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: nowrap;
+    }
+
+    .category {
+      position: relative;
+      width: 250px;
+      height: 350px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      padding: 1rem;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .category > * {
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.9);
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .category.vtt { background-image: url('images/couverture/velo.jpeg'); }
+    .category.electrique { background-image: url('images/couverture/electrique.jpeg'); }
+    .category.trotinette { background-image: url('images/couverture/trotinette.jpeg'); }
+
+    footer {
+      background-color: #003c5e;
+      color: white;
+      padding: 3rem 2rem 1rem 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-box {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-box p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .categories {
+        flex-direction: column;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      header h1 {
+        font-size: 2.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+
+      .category {
+        width: 90%;
+        height: 250px;
+        font-size: 1.5rem;
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="site-name"><span class="vs-logo">VS</span> Velo.Stor</div>
+    <div class="nav-center">
+      <ul>
+        <li>
+          <a href="admin.html">حسابي</a>
+          <div class="dropdown">
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="terms.html">الشروط والأحكام</a>
+          </div>
+        </li>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li>
+          <a href="products.html">منتوجاتنا</a>
+          <div class="dropdown">
+            <a href="products_vtt.html">Vélo VTT</a>
+            <a href="products_electrique.html">Vélo Électrique</a>
+            <a href="products_trotinette.html">Trotinette</a>
+          </div>
+        </li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Velo.Stor</h1>
+    <p>اكتشف أفضل أنواع الدراجات بجودة عالية وتصاميم عصرية</p>
+    <a href="products.html" class="cta-button">اشتر الآن</a>
+  </header>
+
+  <!-- CATEGORIES -->
+  <section>
+    <h2>فئات المنتجات</h2>
+    <div class="categories">
+      <div class="category vtt" onclick="location.href='products_vtt.html'">Vélo VTT</div>
+      <div class="category electrique" onclick="location.href='products_electrique.html'">Vélo Électrique</div>
+      <div class="category trotinette" onclick="location.href='products_trotinette.html'">Trotinette</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3><span class="vs-logo">VS</span> Velo.Stor</h3>
+        <p>Velo.Stor est une boutique en ligne spécialisée dans la vente de vélos modernes، qu’ils soient électriques أو tout terrain أو trotinette. Livraison rapide، prix compétitifs، وخدمة ممتازة.</p>
+      </div>
+      <div class="footer-box">
+        <h3>روابط سريعة</h3>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="products.html">منتوجاتنا</a>
+          <a href="products_vtt.html">Vélo VTT</a>
+          <a href="products_electrique.html">Vélo Électrique</a>
+          <a href="products_trotinette.html">Trotinette</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
+      </div>
+      <div class="footer-box footer-contact">
+        <h3>تواصل معنا</h3>
+        <div><i class="fas fa-phone"></i> 0716142438</div>
+        <div><i class="fab fa-whatsapp"></i> 0716142438</div>
+        <div><i class="fas fa-envelope"></i> nexusovertex@gmail.com</div>
+        <div><i class="fas fa-map-marker-alt"></i> الدار البيضاء، عين الذياب، شارع الفقهاء</div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Velo.Stor - جميع الحقوق محفوظة
+    </div>
+  </footer>
+</body>
+</html>

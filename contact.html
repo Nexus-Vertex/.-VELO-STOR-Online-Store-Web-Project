@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تواصل معنا - Velo.Stor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    nav {
+      background-color: #004f77;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .site-name {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .vs-logo {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #00aaff;
+      background: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+    }
+    .nav-center {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+	nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #005f88;
+      border-radius: 5px;
+      min-width: 180px;
+      z-index: 1000;
+    }
+
+    .dropdown a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-align: right;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .dropdown a:hover {
+      background-color: #0077aa;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./header_background.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 85vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #00aaff;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    /* القسم العلوي - روابط التواصل */
+    .contact-links {
+      max-width: 1200px;
+      margin: 3rem auto 2rem;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    /* ألوان الأزرار بتدرجات لكل خدمة */
+    .contact-links a {
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background-color 0.3s ease;
+    }
+
+    /* واتساب - أخضر */
+    .contact-links a.whatsapp {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.6);
+    }
+    .contact-links a.whatsapp:hover {
+      background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+      box-shadow: 0 6px 15px rgba(18, 140, 126, 0.8);
+    }
+
+    /* فيسبوك - أزرق */
+    .contact-links a.facebook {
+      background: linear-gradient(135deg, #1877F2 0%, #145DBF 100%);
+      box-shadow: 0 4px 10px rgba(24, 119, 242, 0.6);
+    }
+    .contact-links a.facebook:hover {
+      background: linear-gradient(135deg, #145DBF 0%, #1877F2 100%);
+      box-shadow: 0 6px 15px rgba(20, 93, 191, 0.8);
+    }
+
+    /* جيميل - أحمر */
+    .contact-links a.email {
+      background: linear-gradient(135deg, #D93025 0%, #A52714 100%);
+      box-shadow: 0 4px 10px rgba(217, 48, 37, 0.6);
+    }
+    .contact-links a.email:hover {
+      background: linear-gradient(135deg, #A52714 0%, #D93025 100%);
+      box-shadow: 0 6px 15px rgba(165, 39, 20, 0.8);
+    }
+
+    /* انستغرام - تدرجات ألوان برتقالي بنفسجي */
+    .contact-links a.instagram {
+      background: linear-gradient(45deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%);
+      box-shadow: 0 4px 10px rgba(245, 133, 41, 0.6);
+    }
+    .contact-links a.instagram:hover {
+      background: linear-gradient(45deg, #8134AF 0%, #DD2A7B 50%, #F58529 100%);
+      box-shadow: 0 6px 15px rgba(129, 52, 175, 0.8);
+    }
+
+    /* هاتف - رمادي */
+    .contact-links a.phone {
+      background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+      box-shadow: 0 4px 10px rgba(108, 117, 125, 0.6);
+    }
+    .contact-links a.phone:hover {
+      background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+      box-shadow: 0 6px 15px rgba(73, 80, 87, 0.8);
+    }
+
+    /* أيقونات */
+    .contact-links i {
+      font-size: 1.3rem;
+    }
+
+    /* القسم التحتاني - فورم + صورة */
+    .form-section {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .form-container {
+      flex: 1.2;
+      min-width: 320px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #004f77;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      resize: vertical;
+    }
+    form textarea {
+      min-height: 100px;
+    }
+    form button {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #008ecc;
+    }
+
+    /* رسالة النجاح */
+    #success-message {
+      display: none;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: #0a7e07;
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: #d4edda;
+      border-radius: 8px;
+    }
+
+    /* صورة بجانب الفورم */
+    .image-container {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .image-container img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+      height: 100%;
+    }
+	footer {
+      background-color: #003c5e;
+      color: white;
+      padding: 3rem 2rem 1rem 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-box {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-box p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .contact-links {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .form-section {
+        flex-direction: column;
+      }
+      .image-container, .form-container {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- بار التنقل -->
+  <nav>
+    <div class="site-name"><span class="vs-logo">VS</span> Velo.Stor</div>
+    <div class="nav-center">
+      <ul>
+        <li>
+		<a href="admin.html">حسابي</a>
+		<div class="dropdown">
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="terms.html">الشروط والأحكام</a>
+		</div>
+		</li>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li>
+		 <a href="products.html">منتوجاتنا</a>
+		 <div class="dropdown">
+            <a href="products_vtt.html">Vélo VTT</a>
+            <a href="products_electrique.html">Vélo Électrique</a>
+            <a href="products_trotinette.html">Trotinette</a>
+         </div>
+		</li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- القسم العلوي - روابط التواصل -->
+  <section class="contact-links">
+    <a href="https://wa.me/your-phone-number" target="_blank" rel="noopener noreferrer" class="whatsapp">
+      <i class="fab fa-whatsapp"></i> واتساب
+    </a>
+    <a href="tel:+......." class="phone">
+      <i class="fas fa-phone"></i> هاتف
+    </a>
+    <a href="mailto:your-mail" class="email">
+      <i class="fas fa-envelope"></i> بريد إلكتروني
+    </a>
+    <a href="#" id="facebook-link" class="facebook">
+      <i class="fab fa-facebook-f"></i> فيسبوك
+    </a>
+    <a href="#" id="instagram-link" class="instagram">
+      <i class="fab fa-instagram"></i> انستغرام
+    </a>
+  </section>
+
+  <!-- القسم التحتاني - فورم + صورة -->
+  <section class="form-section">
+    <div class="image-container">
+      <img src="images/couverture/contact-support.jpg" alt="دعم العملاء">
+    </div>
+
+    <div class="form-container">
+      <form id="contact-form" action="#" method="post">
+        <label for="fullname">الاسم الكامل</label>
+        <input type="text" id="fullname" name="fullname" required placeholder="أدخل اسمك الكامل" />
+
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني" />
+
+        <label for="phone">رقم الهاتف</label>
+        <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم هاتفك" />
+
+        <label for="message">الرسالة</label>
+        <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+        <button type="submit">إرسال</button>
+      </form>
+      <div id="success-message">
+        تم إرسال استمارتك بنجاح. شكراً لك على ثقتك بنا!
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      successMessage.style.display = 'block';
+    });
+  </script>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3><span class="vs-logo">VS</span> Velo.Stor</h3>
+        <p>Velo.Stor est une boutique en ligne spécialisée dans la vente de vélos modernes، qu’ils soient électriques أو tout terrain أو trotinette. Livraison rapide، prix compétitifs، وخدمة ممتازة.</p>
+      </div>
+      <div class="footer-box">
+        <h3>روابط سريعة</h3>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="products.html">منتوجاتنا</a>
+          <a href="products_vtt.html">Vélo VTT</a>
+          <a href="products_electrique.html">Vélo Électrique</a>
+          <a href="products_trotinette.html">Trotinette</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
+      </div>
+      <div class="footer-box footer-contact">
+        <h3>تواصل معنا</h3>
+        <div><i class="fas fa-phone"></i> 0716142438</div>
+        <div><i class="fab fa-whatsapp"></i> 0716142438</div>
+        <div><i class="fas fa-envelope"></i> nexusovertex@gmail.com</div>
+        <div><i class="fas fa-map-marker-alt"></i> الدار البيضاء، عين الذياب، شارع الفقهاء</div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Velo.Stor - جميع الحقوق محفوظة
+    </div>
+  </footer>
+</body>
+</html>

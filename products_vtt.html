@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vélo VTT - Velo.Stor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    nav {
+      background-color: #004f77;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    .site-name {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 0 0 auto; 
+    }
+
+    .vs-logo {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #00aaff;
+      background: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      flex: 1 1 auto; 
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #005f88;
+      border-radius: 5px;
+      min-width: 180px;
+      z-index: 1000;
+    }
+
+    .dropdown a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-align: right;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .dropdown a:hover {
+      background-color: #0077aa;
+    }
+
+    header {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 79, 119, 0.15);
+      border-radius: 10px;
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #004f77;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center; 
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+
+    .product-card {
+     background-color: white;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+     width: 320px;
+     min-height: 550px; 
+     transition: transform 0.3s ease;
+     cursor: pointer;
+    }
+
+    .product-card:hover {
+     transform: translateY(-5px);
+    }
+
+    .product-card img {
+     width: 100%;
+     height: 400px; 
+     object-fit: contain; 
+     background-color: #f5f5f5; 
+    }
+
+
+    .product-info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-info p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+
+    .product-info .price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #00aaff;
+      margin-bottom: 1rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #008ecc;
+    }
+
+    footer {
+      background-color: #003c5e;
+      color: white;
+      padding: 3rem 2rem 1rem 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-box {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-box p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .product-card {
+        width: 100%;
+        min-height: 480px;
+      }
+      .product-card img {
+        height: 260px;
+      }
+      nav ul {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="site-name"><span class="vs-logo">VS</span> Velo.Stor</div>
+    <ul>
+	  <li>
+		<a href="admin.html">حسابي</a>
+		<div class="dropdown">
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="terms.html">الشروط والأحكام</a>
+		</div>
+		</li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li>
+       <a href="products.html">منتوجاتنا</a>
+       <div class="dropdown">
+            <a href="products_vtt.html">Vélo VTT</a>
+            <a href="products_electrique.html">Vélo Électrique</a>
+            <a href="products_trotinette.html">Trotinette</a>
+       </div>
+      </li>
+      <li><a href="about.html">من نحن</a></li>
+      <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Vélo VTT</h1>
+    <p>📢 اكتشف أفضل دراجات VTT بأسعار تنافسية 🤩</p>
+  </header>
+
+  <section class="products">
+    <div class="product-card" onclick="location.href='sport_bike.html'">
+      <img src="images/couverture-inside/sport.jpg" alt="VTT Mountain Bike" />
+      <div class="product-info">
+        <h3>VTT Spoet bike 27.5 p</h3>
+        <p>دراجة جبلية عالية الأداء مع نظام تعليق متقدم</p>
+        <div class="price">1399 DH</div>
+        <span class="buy-btn">تفاصيل</span>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="location.href='ciclista.html'">
+      <img src="images/couverture-inside/ciclista.jpg" alt="VTT Speedster" />
+      <div class="product-info">
+        <h3>VTT Ciclista 26 P Aluminium</h3>
+        <p>دراجة VTT خفيفة الوزن وسريعة للتحكم في التضاريس</p>
+        <div class="price">1449 DH</div>
+        <span class="buy-btn">تفاصيل</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3><span class="vs-logo">VS</span> Velo.Stor</h3>
+        <p>Velo.Stor est une boutique en ligne spécialisée dans la vente de vélos modernes، qu’ils soient électriques أو tout terrain أو trotinette. Livraison rapide، prix compétitifs، وخدمة ممتازة.</p>
+      </div>
+      <div class="footer-box">
+        <h3>روابط سريعة</h3>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="products.html">منتوجاتنا</a>
+          <a href="products_vtt.html">Vélo VTT</a>
+          <a href="products_electrique.html">Vélo Électrique</a>
+          <a href="products_trotinette.html">Trotinette</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
+      </div>
+      <div class="footer-box footer-contact">
+        <h3>تواصل معنا</h3>
+        <div><i class="fas fa-phone"></i> 0716142438</div>
+        <div><i class="fab fa-whatsapp"></i> 0716142438</div>
+        <div><i class="fas fa-envelope"></i> nexusovertex@gmail.com</div>
+        <div><i class="fas fa-map-marker-alt"></i> الدار البيضاء، عين الذياب، شارع الفقهاء</div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Velo.Stor - جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+</body>
+</html>

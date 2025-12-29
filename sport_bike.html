@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vélo VTT SPORT BIKE 27,5P - Velo.Stor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      direction: ltr;
+    }
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 79, 119, 0.15);
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .image-section {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .thumbs img {
+      width: 70px;
+      height: 50px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      object-fit: cover;
+      transition: border-color 0.3s;
+    }
+    .thumbs img.active {
+      border-color: #00aaff;
+    }
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
+      height: 300px;
+    }
+    .details-section {
+      flex: 1 1 400px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    h1 {
+      color: #004f77;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .description {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #0077aa;
+    }
+    .specs p {
+      line-height: 1.6;
+      margin: 0.3rem 0;
+      font-weight: 500;
+    }
+    .specs p::before {
+      content: "➡ ";
+      color: #00aaff;
+      font-weight: 700;
+      margin-right: 0.3rem;
+    }
+    .price {
+      font-weight: 700;
+      color: #00aaff;
+      font-size: 1.8rem;
+      margin: 1rem 0 1.5rem 0;
+      text-align: left;
+    }
+    .price del {
+      color: #999;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      text-decoration: line-through;
+    }
+    .buy-btn {
+      background-color: #00aaff;
+      color: white;
+      padding: 1rem 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-decoration: none;
+      user-select: none;
+      transition: background 0.3s ease;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+    .buy-btn:hover {
+      background-color: #008ecc;
+    }
+    @media (max-width: 700px) {
+      .container {
+        flex-direction: column;
+      }
+      .image-section, .details-section {
+        flex: 1 1 100%;
+      }
+      h1, .description, .specs p, .price {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="image-section">
+      <div class="thumbs" id="thumbs">
+        <img src="images/produits/sport/1.jpg" class="active" alt="Photo 1" />
+        <img src="images/produits/sport/2.jpg" alt="Photo 2" />
+        <img src="images/produits/sport/3.jpg" alt="Photo 3" />
+      </div>
+      <img id="mainImage" class="main-image" src="images/produits/sport/1.jpg" alt="Vélo VTT SPORT BIKE 27,5P" />
+    </div>
+
+    <div class="details-section">
+      <h1>💫 SPORT BIKE VÉLO VTT 27,5P 💫</h1>
+      <div class="description">💥 عروض خياليه للاستمتاع بخصم إضافي على مشترياتك 🤩</div>
+
+      <div class="specs">
+        <p>27,5 pouces</p>
+        <p>Les gardes-boues avant et arrière</p>
+        <p>Sport Bike 1ère qualité 💯</p>
+        <p>Roue de vélo en aluminium</p>
+        <p>Changement Shimano</p>
+        <p>Vitesse 3×7=21</p>
+        <p>Plateau Shimano</p>
+        <p>Amortisseur avant</p>
+        <p>Siège sport en cuir</p>
+        <p>Frein à disque avant et arrière</p>
+        <p>✅ Couleurs : 🟠 Orange 🔴 Rouge 🔵 Bleu</p>
+        <p>✅ احسن ثمن في المغرب</p>
+      </div>
+
+      <div class="price">
+        <del>1700 DH</del> 1399 DH
+      </div>
+
+  <a href="https://wa.me/212.......?text= السلام%20عليكم%20%F0%9F%98%8A%20%0A%0Aبغيت%20نسول%20على%20SPORT%20BIKE%20V%C3%89LO%20VTT%2027%2C5P%20بثمن%201399%20درهم.%20واش%20مزال%20متوفرة%3F "target="_blank" class="buy-btn">📲 اطلب الآن عبر واتساب</a>
+
+    </div>
+  </div>
+
+<script>
+  const thumbs = document.querySelectorAll('#thumbs img');
+  const mainImage = document.getElementById('mainImage');
+
+  thumbs.forEach(img => {
+    img.addEventListener('click', () => {
+      mainImage.src = img.src;
+      thumbs.forEach(i => i.classList.remove('active'));
+      img.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

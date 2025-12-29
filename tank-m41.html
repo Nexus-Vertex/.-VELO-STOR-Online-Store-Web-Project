@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trottinette Tank M41</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 1rem;
+      color: #333;
+    }
+
+    .product {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      flex-direction: row-reverse;
+    }
+
+    .images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .thumbs img {
+      width: 70px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .thumbs img.active {
+      border-color: #00aaff;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .details {
+      flex: 1.5;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0077aa;
+      margin-bottom: 0.5rem;
+    }
+
+    .desc {
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: #00aaff;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .price del {
+      color: #999;
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+
+    .specs {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .specs p {
+      margin: 0.4rem 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .specs p::before {
+      content: "✔ ";
+      color: #00aaff;
+      font-weight: bold;
+    }
+
+    .buy-btn {
+      display: block;
+      background-color: #00aaff;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #008ecc;
+    }
+
+    @media (max-width: 768px) {
+      .product {
+        flex-direction: column;
+        text-align: center;
+      }
+      .details {
+        direction: ltr;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="product">
+  <!-- IMAGES À GAUCHE -->
+  <div class="images">
+    <div class="thumbs" id="thumbs">
+      <img src="images/produits/m41/1.jpg" class="active" />
+      <img src="images/produits/m41/2.jpg" />
+      <img src="images/produits/m41/3.jpg" />
+    </div>
+    <img id="mainImage" class="main-image" src="images/produits/m41/1.jpg" />
+  </div>
+
+  <!-- DESCRIPTION À DROITE -->
+  <div class="details">
+    <div class="title">TROTTINETTE TANK M41 - Double Moteurs</div>
+    <div class="desc">
+      Performances extrêmes, autonomie longue durée, <br>
+      design pliable et contrôle via application mobile. <br>
+      Vitesse max jusqu'à 99 km/h. Parfaite pour l'aventure.
+    </div>
+    <div class="price"><del>8599 DH</del> 7999 DH</div>
+
+    <div class="specs">
+      <p>Double moteur 2000W ×2</p>
+      <p>Batterie lithium 52V 20AH</p>
+      <p>Autonomie : 50 à 65 km</p>
+      <p>Vitesse max : 99 km/h</p>
+      <p>Freins à disque + E-ABS</p>
+      <p>Suspension avant/arrière</p>
+      <p>Charge maximale : 150 kg</p>
+      <p>Écran LCD intégré</p>
+      <p>3 niveaux de vitesse</p>
+      <p>LED avant, arrière, latérales</p>
+      <p>Étanchéité IP54 / IPX4</p>
+      <p>Clé NFC + clignotants</p>
+      <p>Roues 11 pouces tout-terrain</p>
+      <p>Pliable facilement</p>
+      <p>Chargeur rapide 54.8V 5A</p>
+      <p>🎁 Sac offert</p>
+    </div>
+
+    <a href="https://wa.me/212......?text=السلام%20عليكم%20%F0%9F%98%8A%20%0A%0Aبغيت%20نسول%20على%20TROTTINETTE%20TANK%20M41%20-%20Double%20Moteurs%20بثمن%207999%20درهم.%20واش%20مزال%20متوفرة%3F" target="_blank" class="buy-btn">📲 اطلب الآن عبر واتساب</a>
+
+  </div>
+</div>
+
+<script>
+  const thumbs = document.getElementById('thumbs');
+  const mainImage = document.getElementById('mainImage');
+
+  thumbs.querySelectorAll('img').forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      mainImage.src = thumb.src;
+      thumbs.querySelectorAll('img').forEach(img => img.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
