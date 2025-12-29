@@ -47,7 +47,7 @@ https://github.com/Nexus-Vertex/Meta-API-python-whatsapp-bot
 
 - **Git & GitHub**
 
-## 🇩🇪 Hinweis
+## Hinweis
 
 Dieses Projekt wurde eigenständig entwickelt, um grundlegende Kenntnisse in den Bereichen Webentwicklung, Python, APIs, WhatsApp-Integration und Backend-Logik zu demonstrieren.
 
