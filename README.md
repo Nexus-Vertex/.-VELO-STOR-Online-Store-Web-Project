@@ -1,5 +1,7 @@
 # VELO STOR – Online Store 🛒🚲
 
+![VELO STOR Banner](https://capsule-render.vercel.app/api?type=waving&color=0:1A1A2E,100:E74C3C&height=200&text=VELO%20STOR%20🛒🚲&fontSize=40&fontColor=fff&animation=fadeIn&desc=Online%20Store%20%2B%20WhatsApp%20Bot&descSize=20)
+
 VELO STOR is an online store project developed for learning and technical experimentation around e-commerce, product presentation, and user experience.
 
 This project is directly linked to a WhatsApp bot, allowing users to interact with the store via WhatsApp to browse products, get information, and simulate an automated customer journey.
