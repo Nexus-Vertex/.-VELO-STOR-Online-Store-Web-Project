@@ -1,4 +1,4 @@
-# VELO STOR – Online Store 🛒🚲
+# VELO STOR – Online Store 
 
 ![VELO STOR Banner](https://capsule-render.vercel.app/api?type=waving&color=0:1A1A2E,100:E74C3C&height=200&text=VELO%20STOR%20🛒🚲&fontSize=40&fontColor=fff&animation=fadeIn&desc=Online%20Store&descSize=20)
 
@@ -23,7 +23,7 @@ https://github.com/Nexus-Vertex/Meta-API-python-whatsapp-bot
 
 - **Simulation of a customer service experience via WhatsApp**
 
-## 🎯 Project Goal
+##  Project Goal
 
 ### This project aims to:
 
@@ -37,7 +37,7 @@ https://github.com/Nexus-Vertex/Meta-API-python-whatsapp-bot
 
 - **The products shown are used only for testing and demonstration purposes.**
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **HTML / CSS / JavaScript (frontend)**
 
@@ -62,3 +62,18 @@ Dieses Repository dient als praktischer Nachweis meiner Motivation, Lernbereitsc
 - **WhatsApp AI Bot:** 👉 https://github.com/Nexus-Vertex/Meta-API-python-whatsapp-bot
 
 - **Anomaly Detection Program:** 👉 https://github.com/Nexus-Vertex/Anomaly-Detection-System
+
+##  Author
+
+- GitHub : [@Nexus-Vertex](https://github.com/Nexus-Vertex)
+- Email : leilaeltousy@gmail.com
+
+---
+
+## 📝 License
+
+This project is shared for educational and portfolio purposes.
+
+---
+
+⭐ If you find this project useful, feel free to give it a star!
