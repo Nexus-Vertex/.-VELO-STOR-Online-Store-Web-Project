@@ -9,15 +9,15 @@ This project is directly linked to a WhatsApp bot, allowing users to interact wi
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./screenshots/screenshot1.png" width="400" alt="Homepage"/>
-  <img src="./screenshots/screenshot2.png" width="400" alt="Products page"/>
+  <img src="./images/screenshots/screenshot1.png" width="400" alt="Homepage"/>
+  <img src="./images/screenshots/screenshot2.png" width="400" alt="Products page"/>
 </p>
 <p align="center">
-  <img src="./screenshots/screenshot3.png" width="400" alt="Product detail page"/>
-  <img src="./screenshots/screenshot4.png" width="400" alt="About us page"/>
+  <img src="./images/screenshots/screenshot3.png" width="400" alt="Product detail page"/>
+  <img src="./images/screenshots/screenshot4.png" width="400" alt="About us page"/>
 </p>
 <p align="center">
-  <img src="./screenshots/screenshot5.png" width="400" alt="Contact page"/>
+  <img src="./images/screenshots/screenshot5.png" width="400" alt="Contact page"/>
 </p>
 
 👉 **[View all screenshots](./screenshots)**
